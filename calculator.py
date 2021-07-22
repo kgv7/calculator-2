@@ -1,6 +1,6 @@
 """CLI application for a prefix-notation calculator."""
 
-from arithmetic-fs import (add, subtract, multiply, divide, square, cube,
+from arithmetic_fs import (add, subtract, multiply, divide, square, cube,
                         power, mod, )
 
 
@@ -13,7 +13,15 @@ def calculate_numbers(input):
         operation = input
 #     tokenize input
         output = operation.split(" ")
-        numlist.append(float(output[1:]))
+        output_list = []
+        output_list.append((output[1:]))
+        print(output_list)
+        number_list = []
+
+        for list in output_list:
+            for number in list:
+                new_number = float(number)
+                number_list.append(new_number)
         
         num1 = float(output[1])
 
@@ -28,7 +36,7 @@ def calculate_numbers(input):
             if output[0] == "pow":
                 return power(num1, num2)
             elif output[0] == "+":
-                return add(numlist)
+                return add(number_list)
             elif output[0] == "-":
                 return subtract(num1, num2)
             elif output[0] == "*":
