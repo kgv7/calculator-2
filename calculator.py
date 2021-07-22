@@ -6,6 +6,8 @@ from arithmetic_fs import (add, subtract, multiply, divide, square, cube,
 
 # Replace this with your code
 
+OPERATORS = ["+", "-", "*", "/", "pow", "mod", "square", "cube"]
+
 def calculate_numbers(input):
     # repeat forever:
     while True:
@@ -13,6 +15,9 @@ def calculate_numbers(input):
         operation = input
 #     tokenize input
         output = operation.split(" ")
+#     check for errors
+        if output[0] not in OPERATORS:
+            return("Incorrect operator.")
 #     create number list from string provided,excluding the zero index
         output_list = []
         output_list.append((output[1:]))
@@ -51,4 +56,4 @@ def calculate_numbers(input):
             elif output[0] == "mod":
                 return mod(num1, num2)
 
-print(calculate_numbers("* 1 2 3 4 5 6"))
+print(calculate_numbers("pow 1 2 3 4 5 6"))
