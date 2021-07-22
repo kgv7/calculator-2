@@ -13,12 +13,17 @@ def add(numlist):
 
 def subtract(num1, num2):
     """Return the second number subtracted from the first."""
+    
     return num1 - num2
 
-def multiply(num1, num2):
+def multiply(numlist):
     """Multiply the two inputs together."""
+    mult = 1
 
-    return num1 * num2
+    for number in numlist:
+        mult = mult * number
+
+    return mult
 
 def divide(num1, num2):
     """Divide the first input by the second and return the result."""

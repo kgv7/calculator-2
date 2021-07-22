@@ -13,11 +13,12 @@ def calculate_numbers(input):
         operation = input
 #     tokenize input
         output = operation.split(" ")
+#     create number list from string provided,excluding the zero index
         output_list = []
         output_list.append((output[1:]))
         print(output_list)
         number_list = []
-
+#     loop through list, then through each number in the list, to then add it into "number_list"
         for list in output_list:
             for number in list:
                 new_number = float(number)
@@ -40,7 +41,7 @@ def calculate_numbers(input):
             elif output[0] == "-":
                 return subtract(num1, num2)
             elif output[0] == "*":
-                return multiply(num1, num2)
+                return multiply(number_list)
             elif output[0] == "/":
                 return divide(num1, num2)
             elif output[0] == "square":
@@ -50,4 +51,4 @@ def calculate_numbers(input):
             elif output[0] == "mod":
                 return mod(num1, num2)
 
-print(calculate_numbers("+ 1 1 1 2 2 2"))
+print(calculate_numbers("* 1 2 3 4 5 6"))
