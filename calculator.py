@@ -60,4 +60,4 @@ def calculate_numbers(input):
             elif output[0] == "mod":
                 return mod(num1, num2)
 
-print(calculate_numbers("- 5 2 6"))
+print(calculate_numbers("- 5"))
