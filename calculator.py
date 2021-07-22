@@ -48,7 +48,7 @@ def calculate_numbers(input):
             elif output[0] == "+":
                 return add(number_list)
             elif output[0] == "-":
-                return subtract(num1, num2)
+                return subtract(number_list)
             elif output[0] == "*":
                 return multiply(number_list)
             elif output[0] == "/":
@@ -60,4 +60,4 @@ def calculate_numbers(input):
             elif output[0] == "mod":
                 return mod(num1, num2)
 
-print(calculate_numbers("pow 5 2 3 4 5 6"))
+print(calculate_numbers("- 5 2 6"))
