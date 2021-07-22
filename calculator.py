@@ -7,6 +7,7 @@ from arithmetic_fs import (add, subtract, multiply, divide, square, cube,
 # Replace this with your code
 
 OPERATORS = ["+", "-", "*", "/", "pow", "mod", "square", "cube"]
+# LETTERS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 def calculate_numbers(input):
     # repeat forever:
@@ -21,14 +22,17 @@ def calculate_numbers(input):
 #     create number list from string provided,excluding the zero index
         output_list = []
         output_list.append((output[1:]))
-        print(output_list)
         number_list = []
 #     loop through list, then through each number in the list, to then add it into "number_list"
         for list in output_list:
             for number in list:
-                new_number = float(number)
-                number_list.append(new_number)
-        
+#     check to make sure each number in list is a number not letter or word
+                if number.isdigit() == True:
+                    new_number = float(number)
+                    number_list.append(new_number)
+                else:
+                    return "Please use numbers not letters"
+
         num1 = float(output[1])
 
         if len(output) < 3:
@@ -56,4 +60,4 @@ def calculate_numbers(input):
             elif output[0] == "mod":
                 return mod(num1, num2)
 
-print(calculate_numbers("pow 1 2 3 4 5 6"))
+print(calculate_numbers("pow 5 2 3 4 5 6"))
